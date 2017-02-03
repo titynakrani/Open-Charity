@@ -1,0 +1,27 @@
+name = Open Charity
+description = A custom HTML/CSS template for Open Charity.
+core = 7.x
+ 
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/animate.css
+stylesheets[all][] = css/owl.carousel.css
+
+
+scripts[] = js/jquery.min.js
+scripts[] = js/wow.min.js
+scripts[] = js/owl.carousel.min.js
+scripts[] = js/theme.js
+ 
+regions[user_menu] = User Menu
+regions[header] = Header
+regions[main_menu] = Main Menu
+regions[preface_first] = Preface First
+regions[preface_second] = Preface Second
+regions[content] = Content
+regions[postscript_first] = Postscript First
+regions[postscript_second] = Postscript Second
+regions[our_members_reg] = Our Members
+regions[our_blogs_reg] = Our Blogs
+regions[base] = Base
+regions[footer_first] = Footer First
+regions[footer_second] = Footer Second

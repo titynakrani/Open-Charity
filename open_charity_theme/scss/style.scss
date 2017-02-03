@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700');
+@import url(//db.onlinewebfonts.com/c/1b4cd06b44538d529084b3599f708643?family=MuseoSansW01-Rounded300);
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@font-face {
+    font-family: 'museosans500';
+    src: url('../fonts/museosans500.eot');
+    src: url('../fonts/museosans500.eot') format('embedded-opentype'),
+         url('../fonts/museosans500.woff2') format('woff2'),
+         url('../fonts/museosans500.woff') format('woff'),
+         url('../fonts/museosans500.ttf') format('truetype'),
+         url('../fonts/museosans500.svg#museosans500') format('svg');
+}
+
+/* ==============================================
+  Base CSS
+ ============================================== */
+
+$body-font-family: 'Open Sans', sans-serif;
+$museo-font-family: 'museosans500';
+
+
+$primary-color: #5fc0c3;
+$secondary-color: #57c0d5;
+
+$primary-text-color:#575656;
+$secondary-text-color:#5b6172;
+$jet: #979eb1;
+$hawkes-blue: #454850;
+
+$gray-color: #f1f2f5;
+$white:#fff;
+
+$container : 80em;
+
+* ,:after,:before{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+body{
+	font-family: $body-font-family;
+	font-size:14px;
+	margin:0;
+	padding:0;
+	overflow-x:hidden;
+}
+a{
+	color:$primary-color;
+	text-decoration:none;
+	transition: all 0.75s ease;
+	&:hover{
+		color:$secondary-color;
+	}
+}
+p{
+	margin:0 0 .5em;
+}
+ul,ol{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+h1,h2,h3,h4,h5{
+    color: $primary-text-color;
+    font-family: $museo-font-family;
+}
+header:after, header:before,
+footer:after, footer:before,
+.clearfix:after, .clearfix:before, 
+.container:after, .container:before, 
+.row:after, .row:before {
+    display: table;
+    content: " ";
+}
+.container {
+	width: 100%;
+	max-width: $container;
+	margin: 0 auto;
+}
+.text-green{
+	color:$primary-color;
+}
+.text-center{
+	text-align:center;
+}
+
+.clearfix { display: inline-block;
+	&:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+ }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/* ==============================================
+  Header CSS
+ ============================================== */
+header {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    min-height: 75px;
+}
+.logo{
+	float:left;
+}
+.navigation {
+	float:right;
+	margin-top:18px;
+	ul{
+		float:left;
+		li{
+			float:left;
+			text-transform: uppercase;
+			margin:0 15px;
+			line-height:40px;
+			font-family:$museo-font-family;
+			padding-top:0; 
+			a{
+				color:$primary-text-color;
+				&:hover{
+					color:$primary-color;
+				}
+				&.join-us {
+				    background: transparent;
+				    border: 1px solid $primary-color;
+				    color: $primary-color;
+				    border-radius: 2px;
+				    letter-spacing: 0.1em;
+				    padding: 10px 20px;
+				    transition: all 0.5s ease;
+				    &:hover{				    	
+					    background: $primary-color;
+					    color: $white;						
+				    }
+				}
+			}
+
+		}
+	}
+	.btn {
+		float:right;
+		margin-left:15px;
+	}
+}
+.block-menu h2{
+  display: none;
+}
+
+/* ==============================================
+  Button CSS
+ ============================================== */
+.btn,button,input[type="submit"],input[type="reset"]{
+	color:$white;
+	font-size:14px;
+	text-align:center;
+	padding:10px 20px;
+	border-radius:2px;
+	background:$primary-color;
+	text-transform: uppercase;
+	transition: all 0.5s ease;
+	position:relative;	
+	font-family:$museo-font-family;
+	letter-spacing: 0.1em;
+	display:inline-block;
+	border:none;
+    cursor: pointer;
+	&:after {
+	    background: rgba(0, 0, 0, 0.015) none repeat scroll 0 0;
+	    bottom: 0;
+	    content: "";
+	    left: 50%;
+	    position: absolute;
+	    right: 50%;
+	    top: 0;
+	    transition: all 0.3s ease 0s;
+	    width: 0;
+	}
+	&:focus:after, &:hover:after {
+	    left: 0;
+	    right: 0;
+	    width: 100%;
+	}
+	&:hover {
+		color:$white;
+	}	
+}
+button:hover,input[type="submit"]:hover,input[type="reset"]:hover {
+	background: $secondary-color;
+    color: $white;
+}
+.btn--border{
+	background:rgba(0,0,0,0);
+	border: 1px solid $primary-color;
+	color:$primary-color;
+	&:hover{
+		background:$primary-color;
+		color:$white;
+	}
+}
+
+/* ==============================================
+  Banner Section CSS
+ ============================================== */
+.main-banner {
+	background:url(../images/hero-banner.jpg) no-repeat left top / cover;
+	padding: 4em 0;
+	color:$white;
+	text-align:center;
+	clear:both;
+	h1{
+		font: 400 55px/76px "MuseoSansW01-Rounded300";
+		text-transform: uppercase;	
+		letter-spacing: 0.03em;	
+		margin-bottom:0;
+		color:$white;
+	}
+	h5{
+		font-size:1.2em;
+		font-weight:normal;
+		line-height:2em;
+		letter-spacing: 0.03em;
+		color:$white;
+	}
+	p{
+		line-height:2em;
+	}
+	.banner-text {
+		width:55%;
+		margin:0 auto;
+	}
+}
+/* ==============================================
+  Event Section CSS
+ ============================================== */
+.upcoming-event {
+	background:$gray-color;
+	padding:32px 0;
+	clear:both;
+	.text-left {
+		float:left;
+		p{
+			color:$secondary-text-color;
+			margin:0;
+			line-height:30px;
+		}
+		span{
+			font-family:$museo-font-family;
+			font-size:1.2em;
+		}
+		strong{
+			color:$primary-text-color;
+			font-weight:500;
+			font-size:1.2em;
+			font-family:$museo-font-family
+		}
+	}
+	.btn{
+		float:right;
+		margin-top:12px;
+	}
+}
+
+.padded40{
+	padding:40px 0;
+}
+/* ==============================================
+  Get Involved Section CSS
+ ============================================== */
+.block-content {
+	&.even{
+		background:#f1f2f5;
+	}
+	h2{
+		color:$primary-text-color;		
+		font:500 26px $museo-font-family;
+		text-align:center;
+		text-transform: uppercase;		
+		margin:0 0 1.5em;
+	}
+	.title{
+		font-size:17px;
+		text-transform: uppercase;
+		color:$primary-text-color;
+		font-weight:500;
+	}
+	p{
+		color:$secondary-text-color;
+		line-height: 1.8em;
+	    margin: 0 auto 2em;	    
+	}
+	.col-4 p {
+		width:80%;
+	}
+	h4{
+		color:$secondary-text-color;
+		font:500 17px $museo-font-family;
+		margin-bottom:30px;
+	}
+}
+/* ==============================================
+  Our Mission Section CSS
+ ============================================== */
+.our-mission {
+	border-bottom:1px solid rgba(0,0,0,0.1);
+	padding-bottom:45px;
+	margin-bottom:45px;
+	.white-box {
+		background:$white;
+		border-radius:3px;
+		margin-top:60px;
+		padding:0 18px 5px;
+		margin-bottom:20px;
+		.box-icon{
+			background:$secondary-color;
+			border-radius:100%;
+			border:10px solid $white;
+			text-align:center;
+			width:100px;
+			display: inline-block;
+		    height: 100px;
+		    margin-top: -47px;
+		}
+		h4{
+			font:17px $museo-font-family;
+			color:$secondary-color;
+			margin-top:0;
+			margin-bottom:10px;
+		}
+	}
+}
+
+/* ==============================================
+  Blog Section CSS
+ ============================================== */
+.blog{
+	h5{
+		font-size:15px;
+		font-weight:600;
+		color:$primary-color;
+		margin:0 0 10px;		
+		border-bottom:1px solid #f2f2f2;
+		overflow: hidden;
+	    padding-bottom: 8px;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	}	
+	p{
+		border-bottom:1px solid #f2f2f2;
+		padding-bottom:20px;
+		margin-bottom:12px;
+	}
+	.date{
+		color:$secondary-text-color;
+	}
+}
+/* ==============================================
+  Form CSS
+ ============================================== */
+form{
+	label{
+	    display: inline-block;
+	    vertical-align: middle;
+	    margin-right: 10px;
+	    min-width: 100px;
+	    color: #5b6172;
+	}
+	.form-text{
+	    display: inline-block;
+	    border:1px solid #ccc;
+	    height: 34px;
+	    padding: 6px 12px;
+	    font-size: 14px;
+	    line-height: 1.42857143;
+	    background: #fff;
+	    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	    min-width: 200px;
+		&:focus{    
+		    border-color: #66afe9;
+		    outline: 0;
+		    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+		    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+
+		}
+	}
+
+} 
+
+/* ==============================================
+  Inner Page CSS
+ ============================================== */
+#main-wrapper {
+    padding-bottom: 30px;
+}
+#user-login-form .item-list ul li{
+    margin-left: 0;
+}
+ul.primary.tabs li {
+    line-height: 33px;
+	a {
+	    color: #333;
+	    padding: 0.5em 1em;
+	}
+}
+
+/* ==============================================
+  Footer CSS
+ ============================================== */
+footer {
+	background: #454850;
+	color: #979eb1;
+	padding-top: 25px;
+	padding-bottom:15px;
+	text-align:center;
+
+	.social-links {
+		text-align: center;
+		padding-bottom:20px;
+		border-bottom:1px solid #585b61;
+		box-shadow: 0 -1px 0 #4a4e57 inset;
+		margin-bottom:12px;
+		li {
+			display: inline-block;
+			font-size:20px;
+			margin: 0 10px 10px;
+		}
+	}
+	a:hover{
+		color:$white;
+	}
+}
+
+
+/* ==============================================
+  Media Query
+ ============================================== */
+@media (min-width: 768px){
+	.col-4 {
+	    width: 33.33333333%;	    
+	}
+	.col-4{
+		float:left;
+	    position: relative;
+	    min-height: 1px;
+	    padding-right: 15px;
+	    padding-left: 15px;
+	}
+}
+
+@media (max-width: 1199px) {
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .col-4 { 
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .block-content .col-4 p {
+        width: 98%;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-toggle {
+        display: inline-block;
+    } 
+    .get-involved .col-4{
+      margin-bottom: 40px;
+    }   
+}
+@media (max-width: 639px) {
+    .logo {
+      float: none;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .navigation {
+      margin: 0 0 15px;
+      float: none;      
+      ul {
+	      float: none;
+	      text-align: center;    
+		   li {
+		      margin:0;       
+		      display: inline-block;
+		      float: none;
+		    }
+		}
+	}
+    .navigation ul li + li{
+      margin-left: 12px;
+    }
+    .main-banner {
+    	h1 {
+	      font-size: 32px;
+	      line-height: 45px;
+	    }
+	    .banner-text {
+	      width: 90%;
+	    }    
+    } 
+}
+
+@media (max-width: 479px) { 
+  .navigation ul li + li{
+    margin-left: 2px;
+  }
+  .navigation ul li {      
+    font-size: 12px;
+	   a.join-us {
+	    padding: 10px 6px;
+	   }
+   }
+}
+
